@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.jayaaweb.network.controller.MonitorController">
+  <HBox spacing="5">
+    <Label text="Host:"/>
+    <TextField fx:id="hostField" promptText="e.g. google.com"/>
+    <Button fx:id="pingBtn" text="Ping"/>
+    <Button fx:id="traceBtn" text="Traceroute"/>
+  </HBox>
+  <Label fx:id="pingLabel" text="Avg Latency: –"/>
+  <LineChart fx:id="traceChart">
+    <xAxis>
+      <NumberAxis label="Hop"/>
+    </xAxis>
+    <yAxis>
+      <CategoryAxis label="Address"/>
+    </yAxis>
+  </LineChart>
+</VBox>
