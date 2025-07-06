@@ -1,0 +1,151 @@
+# ─── Operating System ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Logs and Runtime ────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# ─── Environment Files ───────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ─── Node.js / JavaScript ────────────────────────────────────────────────────
+node_modules/
+bower_components/
+dist/
+build/
+coverage/
+.nyc_output/
+
+# ─── CSS Frameworks ──────────────────────────────────────────────────────────
+# Tailwind output (if you emit to /public or /dist)
+public/
+assets/css/
+# Bootstrap build folder (if used)
+public/bootstrap/
+    
+# ─── MySQL ──────────────────────────────────────────────────────────────────
+*.sql
+dump/
+*.dump
+
+# ─── MongoDB ─────────────────────────────────────────────────────────────────
+data/
+dump/
+*.lock
+
+# ─── Java / Spring Boot ──────────────────────────────────────────────────────
+# Compiled class files
+*.class
+# Build directories
+target/
+build/
+# Packaged archives
+*.jar
+*.war
+*.ear
+
+# ─── IDEs and Editors ────────────────────────────────────────────────────────
+# IntelliJ / WebStorm
+.idea/
+*.iml
+# Eclipse
+*.classpath
+*.project
+*.settings/
+# VS Code
+.vscode/
+# NetBeans
+nbproject/private/
+# Visual Studio
+*.suo
+*.user
+*.csproj.user
+
+# ─── Miscellaneous ────────────────────────────────────────────────────────────
+# Mac thumbnail cache
+._*
+# Backup files
+*.bak
+*.tmp
+# Thumbnails
+~$*
+
+#########################
+
+# 💻 Node.js (Employee Portal, Feedback AI, Gateway, DSA Backend, GitOps Backend)
+node_modules/
+npm-debug.log*
+.env
+.env.local
+.DS_Store
+coverage/
+dist/
+build/
+logs/
+*.log
+
+# 🧪 Testing artifacts
+jest.config.js
+cypress/
+.vitest/
+__tests__/
+*.test.js
+*.spec.js
+
+# 🔧 React Frontends (DSA, GitOps, Unified Shell)
+*.env
+build/
+*.log
+node_modules/
+*.cache/
+.cache/
+.idea/
+.vscode/
+*.iml
+
+# ☕ Spring Boot (Salary Appraisal Service)
+target/
+*.class
+*.log
+*.jar
+*.war
+*.iml
+*.swp
+.settings/
+.project
+.classpath
+
+# 🧰 Maven
+*.mvn/
+.mvn/
+mvnw
+mvnw.cmd
+
+# 📦 Docker artifacts
+docker-compose.override.yml
+*.env
+**/.docker/
+**/Dockerfile.*
+
+# 📐 IDEs & OS
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+Thumbs.db
+.DS_Store
+*.idea/
+.vscode/
+*.iml
+
+# 🔒 Secrets
+*.key
+*.pem
+certs/
+secrets/

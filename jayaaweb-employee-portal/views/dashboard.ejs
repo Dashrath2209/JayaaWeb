@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<h2>Dashboard</h2>
+<a href="/employees" class="btn btn-outline-secondary mb-3">View All Employees</a>
+
+<form action="/dashboard/add" method="POST" class="row g-3">
+  <input type="hidden" name="id" value="<%= emp?._id || '' %>">
+  <% ['name','position','department','salary','performanceScore'].forEach(field => { %>
+    <div class="col-md-4">
+      <label class="form-label text-capitalize"><%= field %></label>
+      <input name="<%= field %>" class="form-control" value="<%= emp?[field] || '' %>" required>
+    </div>
+  <% }) %>
+  <div class="col-12">
+    <button class="btn btn-success"><%= emp ? 'Update' : 'Add' %> Employee</button>
+  </div>
+</form>
+<%- include('partials/footer') %>
