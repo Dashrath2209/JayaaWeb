@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  gateway:
+    build: ./jayaaweb-gateway
+    ports: ['80:8080']
+    env_file: ./jayaaweb-gateway/.env
+
+  employee:
+    image: node:18
+    working_dir: /app
+    volumes: ['./jayaaweb-employee-portal:/app']
+    command: npm run dev
+    env_file: ./jayaaweb-employee-portal/.env
+
+  salary:
+    build: ./jayaaweb-salary-service
+    ports: ['8081:8081']
+    depends_on: [employee]
+    env_file: ./jayaaweb-salary-service/.env
+
+  feedback:
+    build: ./jayaaweb-feedback-ai
+    ports: ['5001:5001']
+    env_file: ./jayaaweb-feedback-ai/.env
+    depends_on: [salary]
+
+  dsa:
+    build: ./jayaaweb-dsa-playground/backend
+    ports: ['5002:5002']
+    env_file: ./jayaaweb-dsa-playground/backend/.env
+    depends_on: [employee]
+
+  network:
+    image: openjdk:11
+    volumes: ['./jayaaweb-network-monitor:/app']
+    working_dir: /app
+    command: mvn clean javafx:run
+    depends_on: []
+
+  gitops:
+    build: ./jayaaweb-gitops-dashboard/backend
+    ports: ['5003:5003']
+    env_file: ./jayaaweb-gitops-dashboard/backend/.env
